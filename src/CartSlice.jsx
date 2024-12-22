@@ -11,15 +11,13 @@ export const CartSlice = createSlice({
       const existingProduct = state.items.find(item => item.name === product.name);
 
       if (existingProduct) {
-        // If the product is already in the cart, increment the quantity
         existingProduct.quantity += 1;
       } else {
-        // If it's not in the cart, add it
         state.items.push({ ...product, quantity: 1 });
       }
     },
     removeItem: (state, action) => {
-      const name = action.payload; // Expect only name as payload
+      const name = action.payload;
       state.items = state.items.filter(item => item.name !== name);
     },
     updateQuantity: (state, action) => {

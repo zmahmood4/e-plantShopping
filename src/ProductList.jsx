@@ -6,8 +6,8 @@ import { addItem } from './CartSlice';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false);
-    const [cart, setCart] = useState([]); // State to manage the cart items
-    const dispatch = useDispatch(); // To dispatch actions to the Redux store
+    const [cart, setCart] = useState([]);
+    const dispatch = useDispatch();
 
     const plantsArray = [
         {
@@ -219,17 +219,17 @@ function ProductList() {
 
     const handleCartClick = (e) => {
         e.preventDefault();
-        setShowCart(true); // Set showCart to true when cart icon is clicked
+        setShowCart(true);
     };
 
     const handleAddToCart = (plant) => {
-        dispatch(addItem(plant)); // Dispatch the plant to the Redux store
-        setCart([...cart, plant]); // Add the selected plant to the cart
+        dispatch(addItem(plant));
+        setCart([...cart, plant])
     };
 
     const handlePlantsClick = (e) => {
         e.preventDefault();
-        setShowCart(false); // Hide the cart when navigating to Plants
+        setShowCart(false);
     };
 
     return (
